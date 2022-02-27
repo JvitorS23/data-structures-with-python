@@ -129,13 +129,10 @@ class LinkedList:
             return
         before = None
         current = self.head
-        after = current.next
-        old_head = self.head
         self.head = self.tail
-        self.tail = old_head
+        self.tail = current
         for _ in range(self.length):
             after = current.next
             current.next = before
             before = current
             current = after
-
