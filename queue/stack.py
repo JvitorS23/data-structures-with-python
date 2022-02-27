@@ -52,18 +52,3 @@ class Queue:
             first_node.next = None
         self.length -= 1
         return first_node
-
-
-mq = Queue(1)
-mq.enqueue(2)
-mq.enqueue(3)
-print(mq)
-mq.dequeue()
-print(mq)
-
-mq.dequeue()
-print(mq)
-
-mq.dequeue()
-print(mq)
-
