@@ -1,1 +1,1 @@
-from .linked_list import LinkedListNode, LinkedList
+from .linked_list import LinkedListNode, LinkedList # noqa

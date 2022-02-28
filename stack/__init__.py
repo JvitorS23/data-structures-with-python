@@ -1,1 +1,1 @@
-from .stack import Stack, StackNode
+from .stack import Stack, StackNode # noqa
