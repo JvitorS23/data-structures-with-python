@@ -51,3 +51,56 @@ class BinarySearchTree:
         while current_node.left is not None:
             current_node = current_node.left
         return current_node
+
+    def bfs(self):
+        current_node = self.root
+        node_queue = []
+        results = []
+        node_queue.append(current_node)
+        while len(node_queue) > 0:
+            visited = node_queue.pop(0)
+            results.append(visited.value)
+            if visited.left is not None:
+                node_queue.append(visited.left)
+            if visited.right is not None:
+                node_queue.append(visited.right)
+        return results
+
+    def dfs_pre_order(self):
+        results = []
+
+        def traverse(current_node):
+            results.append(current_node.value)
+            if current_node.left is not None:
+                traverse(current_node.left)
+            if current_node.right is not None:
+                traverse(current_node.right)
+
+        traverse(self.root)
+        return results
+
+    def dfs_post_order(self):
+        results = []
+
+        def traverse(current_node):
+            if current_node.left is not None:
+                traverse(current_node.left)
+            if current_node.right is not None:
+                traverse(current_node.right)
+            results.append(current_node.value)
+
+        traverse(self.root)
+        return results
+
+    def dfs_in_order(self):
+        results = []
+
+        def traverse(current_node):
+            if current_node.left is not None:
+                traverse(current_node.left)
+            results.append(current_node.value)
+            if current_node.right is not None:
+                traverse(current_node.right)
+
+        traverse(self.root)
+        return results
